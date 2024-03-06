@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista Ordenada Dinâmica</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h2>Adicionar itens à lista ordenada</h2>
+  <form id="addItemForm">
+    <label for="item">Novo item:</label>
+    <input type="text" id="item" name="item">
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <h2>Itens adicionados:</h2>
+  <ol id="itemList">
+  </ol>
+
+  <script>
+    let items = [];
+
+    function addItem(event) {
+      event.preventDefault();
+      const newItemInput = document.getElementById('item');
+      const newItemValue = newItemInput.value.trim();
+
+      if (newItemValue !== '') {
+        items.push(newItemValue);
+        newItemInput.value = '';
+
+        items.sort();
+
+        displayItems();
+      }
+    }
+
+    function displayItems() {
+      const itemList = document.getElementById('itemList');
+
+      itemList.innerHTML = '';
+
+      items.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        itemList.appendChild(listItem);
+      });
+    }
+
+    const addItemForm = document.getElementById('addItemForm');
+    addItemForm.addEventListener('submit', addItem);
+  </script>
+</body>
+</html>
