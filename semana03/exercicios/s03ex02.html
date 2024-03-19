@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+<body>
+    <h1>Relógio</h1>
+    <p id="hora"></p>
+    <script>
+        const horaElement = document.getElementById('hora');
+
+        function atualizarHora() {
+            const dataAtual = new Date();
+            const hora = dataAtual.getHours().toString().padStart(2, '0');
+            const minuto = dataAtual.getMinutes().toString().padStart(2, '0');
+            const segundo = dataAtual.getSeconds().toString().padStart(2, '0');
+
+            horaElement.textContent = `${hora}:${minuto}:${segundo}`;
+
+            setTimeout(atualizarHora, 1000);
+        }
+
+        atualizarHora();
+    </script>
+</body>
+</html>
+
