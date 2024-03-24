@@ -1,0 +1,34 @@
+body {
+    background-color: #ffffff; /* Amarelo claro */
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #000000; /* Preto */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-top: 10px;
+}
+
+a {
+    display: inline-block; /* Alteração para ocupar somente o tamanho do texto */
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #ffff67; /* Amarelo */
+    color: #000; /* Preto */
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #ffffab; /* Branco */
+}
+
